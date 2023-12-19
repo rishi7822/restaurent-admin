@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="add_mf" method="POST">
+        {% csrf_token %}
+        <label for="food">Main Food </label>
+        <input type="text" name="fd" id="food">
+        <input type="submit" value="Submit">
+        <br><br><br>
+        <label for="sfood">Sub Food </label>
+        <input type="text" name="sfd" id="sfood">
+        <!-- <input type="submit" value="Submit"> -->
+        <input type="submit" value="Submit">
+    </form>
+    {{obj_f}}
+<br><br><br>
+    <!-- <form action="add_sf" method="POST">
+        {% csrf_token %}
+        <label for="sfood">Sub Food </label>
+        <input type="text" name="sfd" id="sfood">
+        <input type="submit" value="Submit">
+    </form>
+    <br><br><br> -->
+    <form action="add_tab" method="POST">
+        {% csrf_token %}
+        <label for="table">Table </label>
+        <input type="text" name="tab" id="table">
+        <input type="submit" value="Submit">
+        <!-- <input type="submit" value="Submit"> -->
+    </form>
+{{obj_tab}}
+<br><br><br>
+
+    <form action="add_wait" method="POST">
+        {% csrf_token %}
+        <label for="ta">Waiter name </label>
+        <input type="text" name="wait" id="ta">
+        <input type="submit" value="Submit">
+    </form>
+    {{obj_waiter}}
+    <br><br><br>
+
+<a href="book">Click here to book order</a>
+</body>
+</html>

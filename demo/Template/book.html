@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+        </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Food name</td>
+            <td>Cost</td>
+        </tr>
+        {% for i in foo %}
+        <tr>
+            <td>{{i.mainStreamFoodName}}</td>
+            <td>{{i.subCategoryFoodCharge}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <ol>
+        {% for i in tab %}
+        <li>{{i.tablename}}</li>
+        {% endfor %}
+
+    </ol>
+    <ol>
+        {% for i in waiter %}
+        <li>{{i.WaiterName}}</li>
+        {% endfor %}
+    </ol>
+
+
+    <form action="person_add" method="POST">
+        {% csrf_token %} 
+        <label for="name">Selected Food</label><br>
+        <input type="text" id="name" name="pname"><br><br>
+        <label for="Mobno">Select Table</label><br>
+        <input type="number" id="Mobno" name="Mobno"><br><br>
+        <label for="Addr">Select Waiter</label><br><br>
+        <input type="text" id="Addr" name="Addr"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+{{msg}}
+</body>
+</html>
